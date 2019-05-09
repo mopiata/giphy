@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gif } from "../gif";
+import { GiphyRequestService } from "../giphy-request.service";
 
 @Component({
   selector: 'app-gifs',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GifsComponent implements OnInit {
 
-  constructor() { }
+  public gifs:Object;
+
+  constructor(private giphyRequestService:GiphyRequestService) {
+
+   }
 
   ngOnInit() {
+    this.giphyRequestService.getTrendingGifs()
+      .subscribe(giphys =>{
+        this.gifs=giphys.data;
+        console.log(this.gifs);
+      })
+    
   }
 
 }

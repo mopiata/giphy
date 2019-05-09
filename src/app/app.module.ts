@@ -8,6 +8,11 @@ import { GifsComponent } from './gifs/gifs.component';
 import { GifDetailsComponent } from './gif-details/gif-details.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { GiphyRequestService } from "./giphy-request.service";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +23,11 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     SearchResultsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GiphyRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
