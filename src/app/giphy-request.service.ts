@@ -11,16 +11,19 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class GiphyRequestService {
   gifs=[];
-  private searchString:string;
+  
   private apiKey: string ="qgpXJFWjh8SOsNfVdXdzlxTJTbu3xhHE";
 
 
   constructor(private http:HttpClient) {
     console.log("Service ready!");
-    this.searchString="happy";
    }
 
   getTrendingGifs(){
-    return this.http.get("http://api.giphy.com/v1/gifs/trending?&api_key="+ this.apiKey +"&limit=24");
+    return this.http.get("http://api.giphy.com/v1/gifs/trending?&api_key="+ this.apiKey +"&limit=4");
+  }
+  
+  searchGifs(searchString){
+    return this.http.get("http://api.giphy.com/v1/gifs/search?q=" + searchString +"&api_key=" + this.apiKey +"&limit=4&lang=en&fmt=json");
   }
 }

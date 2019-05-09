@@ -19,7 +19,6 @@ export class GifsComponent implements OnInit {
     this.giphyRequestService.getTrendingGifs()
       .subscribe(giphys =>{
         this.gifs=giphys.data;
-        console.log(this.gifs);
       })
     
   }

@@ -1,7 +1,11 @@
 <div class="container search">
-  <form #searchForn='ngForm' autocomplete="off">
-    <input class="form-control form-control-lg mysearch" type="search" placeholder="Search Gifs" aria-label="Search">
-    <button class="btn btn-primary form-control-lg btn-search" type="submit">Search</button>
+  <form #searchForm='ngForm' class="myForm" autocomplete="off" (ngSubmit)="submitSearch()">
+    <input required #search="ngModel" id="search" name="search" [(ngModel)]="searchString" class="form-control form-control-lg mysearch" type="search" placeholder="Search Gifs" aria-label="Search">
+    <button [disabled]="searchForm.form.invalid" class="btn btn-primary form-control-lg btn-search" type="submit">Search</button>
   </form>
   <hr>
+</div>
+<div class="container">
+  <app-search-results [gifs]='gifs'></app-search-results>
+  <hr><hr>
 </div>

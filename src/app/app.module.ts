@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { GifsComponent } from './gifs/gifs.component';
-import { GifDetailsComponent } from './gif-details/gif-details.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
 import { HttpClientModule } from "@angular/common/http";
@@ -19,8 +18,7 @@ import { GiphyRequestService } from "./giphy-request.service";
     NavComponent,
     SearchFormComponent,
     GifsComponent,
-    GifDetailsComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

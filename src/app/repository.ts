@@ -93,3 +93,14 @@
   //     console.log(res);
   //   });
   // }
+
+  // submitSearch(searchString){
+  //   this.searchString=searchString;
+  //   console.log(this.searchString);
+  //   this.formValues.resetForm();
+  //   this.giphyRequestService.searchGifs(this.searchString)
+  //     .subscribe(giphys => {
+  //       this.gifs = giphys.data;
+  //       console.log(this.gifs);
+  //     })
+  // }
