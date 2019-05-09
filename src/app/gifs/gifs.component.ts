@@ -19,6 +19,7 @@ export class GifsComponent implements OnInit {
     this.giphyRequestService.getTrendingGifs()
       .subscribe(giphys =>{
         this.gifs=giphys.data;
+        this.gifs.map(res => console.log(res.images.downsized_medium.url));
       })
     
   }
