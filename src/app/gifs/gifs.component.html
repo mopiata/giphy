@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="row">
+  <h1>Trending...</h1>
+  <div class="row" *ngIf="gifs">
     
     <div class="card" *ngFor="let gif of gifs">
       <img class="card-img-top" [src]="gif.images.downsized_medium.url" alt="Card image cap">    

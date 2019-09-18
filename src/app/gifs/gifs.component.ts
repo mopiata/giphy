@@ -9,7 +9,7 @@ import { GiphyRequestService } from "../giphy-request.service";
 })
 export class GifsComponent implements OnInit {
 
-  public gifs:Object;
+  public gifs:any;
 
   constructor(private giphyRequestService:GiphyRequestService) {
 
@@ -17,9 +17,12 @@ export class GifsComponent implements OnInit {
 
   ngOnInit() {
     this.giphyRequestService.getTrendingGifs()
-      .subscribe(giphys =>{
-        this.gifs=giphys.data;
-        this.gifs.map(res => console.log(res.images.downsized_medium.url));
+      .subscribe((giphys: any) =>{
+        
+        if (giphys) {
+          this.gifs = giphys.data;
+          this.gifs.map(res => console.log(res.images.downsized_medium.url));
+        }
       })
     
   }

@@ -11,14 +11,14 @@ export class SearchFormComponent implements OnInit {
   @ViewChild('searchForm') formValues;
   
   private searchString="";
-  private gifs:Object;
+  private gifs:Object[];
 
   constructor(private giphyRequestService: GiphyRequestService) { }
 
   submitSearch(){
     
     this.giphyRequestService.searchGifs(this.searchString)
-      .subscribe(giphys => {
+      .subscribe((giphys:any) => {
         this.gifs = giphys.data;
         console.log(this.gifs);
       })
