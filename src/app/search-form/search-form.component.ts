@@ -10,8 +10,8 @@ import { SearchResultsComponent } from '../search-results/search-results.compone
 export class SearchFormComponent implements OnInit {
   @ViewChild('searchForm') formValues;
   
-  private searchString="";
-  private gifs:Object[];
+  public searchString="";
+  public gifs:Object[];
 
   constructor(private giphyRequestService: GiphyRequestService) { }
 
